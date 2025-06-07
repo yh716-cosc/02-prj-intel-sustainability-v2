@@ -183,7 +183,11 @@ footer {
 .translated-rtl {
   direction: rtl;
   text-align: right;
+  /* This makes sure punctuation and numbers also appear RTL */
+  unicode-bidi: plaintext;
 }
+
+/* Make header content and timeline reverse for RTL */
 .translated-rtl .header-content {
   flex-direction: row-reverse;
 }
@@ -191,6 +195,14 @@ footer {
   flex-direction: row-reverse;
 }
 .translated-rtl .timeline-card p {
+  text-align: right;
+}
+
+/* Make form input boxes align right in RTL mode */
+.translated-rtl input,
+.translated-rtl textarea,
+.translated-rtl select {
+  direction: rtl;
   text-align: right;
 }
 
