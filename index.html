@@ -11,7 +11,8 @@
   <!-- Add Bootstrap Icons CDN for the icons in the three-column section -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
-<body class="translated-rtl">
+
+<body>
 
     <!-- Header / Hero Section -->
   <header>
@@ -36,7 +37,7 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section class="container my-5 py-4 px-5">
+  <section class="container my-5 py-4 px-5 timeline-cards-section">
     <!-- 
       my-5 = margin (vertical space) above and below the section
       py-4 = padding (vertical space) inside the section
@@ -203,31 +204,30 @@
     <!-- Email input with label for accessibility -->
     <div class="mb-3">
       <label for="newsletter-email" class="form-label">Email address</label>
-      <!-- Made input box wider by increasing max-width and removing fixed width -->
+      <!-- Made input box smaller and font size match label -->
       <input 
         type="email" 
-        class="form-control form-control-lg"
+        class="form-control"
         id="newsletter-email"
         placeholder="Enter your email"
         required
-        style="max-width: 100%; min-width: 200px; width: 100%;" 
+        style="max-width: 100%; min-width: 200px; width: 100%; font-size: 1em; padding: 0.375em 0.75em; height: 2em;"
       >
     </div>
     <!-- Name input with label for accessibility -->
     <div class="mb-3">
       <label for="newsletter-name" class="form-label">Name</label>
-      <!-- Made input box wider by increasing max-width and removing fixed width -->
+      <!-- Made input box smaller and font size match label -->
       <input 
         type="text" 
-        class="form-control form-control-lg"
+        class="form-control"
         id="newsletter-name"
         placeholder="Your name"
         required
-        style="max-width: 100%; min-width: 200px; width: 100%;" 
+        style="max-width: 100%; min-width: 200px; width: 100%; font-size: 1em; padding: 0.375em 0.75em; height: 2em;"
       >
     </div>
     <!-- Submit button -->
-    <!-- Removed w-100 class to make the button smaller and centered -->
     <button type="submit" class="btn btn-primary" style="width: 100px; display: block; margin: 0 auto;">
       Subscribe
     </button>

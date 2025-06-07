@@ -183,8 +183,15 @@ footer {
 .translated-rtl {
   direction: rtl;
   text-align: right;
-  /* This makes sure punctuation and numbers also appear RTL */
   unicode-bidi: plaintext;
+}
+
+/* Make the timeline cards section reverse row order in RTL */
+.translated-rtl .container.timeline-cards-section {
+  display: flex;
+  flex-direction: row-reverse; /* Cards will appear in reverse order in RTL */
+  flex-wrap: wrap;
+  gap: 1em; /* Optional: space between cards */
 }
 
 /* Make header content and timeline reverse for RTL */
