@@ -146,7 +146,7 @@
   </section>
 
   <!-- Newsletter Subscription Form Section -->
-<section style="max-width: 400px; margin: 2em auto;">
+<section style="max-width: 600px; margin: 2em auto;">
   <!-- Newsletter heading -->
   <h2 style="font-size: 1.5em; text-align: center;">Subscribe to Our Sustainability Newsletter</h2>
   <!-- Simple Bootstrap form -->
@@ -154,17 +154,34 @@
     <!-- Email input with label for accessibility -->
     <div class="mb-3">
       <label for="newsletter-email" class="form-label">Email address</label>
-      <!-- Added style for longer input box -->
-      <input type="email" class="form-control form-control-lg" id="newsletter-email" placeholder="Enter your email" required style="width: 100%;">
+      <!-- Made input box wider by increasing max-width and removing fixed width -->
+      <input 
+        type="email" 
+        class="form-control form-control-lg"
+        id="newsletter-email"
+        placeholder="Enter your email"
+        required
+        style="max-width: 100%; min-width: 200px; width: 100%;" 
+      >
     </div>
     <!-- Name input with label for accessibility -->
     <div class="mb-3">
       <label for="newsletter-name" class="form-label">Name</label>
-      <!-- Added style for longer input box -->
-      <input type="text" class="form-control form-control-lg" id="newsletter-name" placeholder="Your name" required style="width: 100%;">
+      <!-- Made input box wider by increasing max-width and removing fixed width -->
+      <input 
+        type="text" 
+        class="form-control form-control-lg"
+        id="newsletter-name"
+        placeholder="Your name"
+        required
+        style="max-width: 100%; min-width: 200px; width: 100%;" 
+      >
     </div>
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+    <!-- Removed w-100 class to make the button smaller and centered -->
+    <button type="submit" class="btn btn-primary" style="width: 100px; display: block; margin: 0 auto;">
+      Subscribe
+    </button>
   </form>
 </section>
 

@@ -53,6 +53,25 @@ header p {
   font-size: 1.1rem;
 }
 
+    /* Make header content stack vertically on small screens */
+    @media (max-width: 600px) {
+      .header-content {
+        display: block; /* Stack logo and text */
+        text-align: center; /* Center everything */
+      }
+      .header-content img {
+        width: 6em; /* Make logo smaller on phones */
+        margin: 0 auto 1em auto; /* Center logo and add space below */
+        display: block;
+      }
+      .header-text h1 {
+        font-size: 1.5em; /* Smaller heading on phones */
+      }
+      .header-text p {
+        font-size: 1em; /* Smaller paragraph text */
+      }
+    }
+
 /* Use Bootstrap's spacing utilities for section padding in your HTML:
    <section class="px-5 py-5 mx-5">
    This adds padding and margin using Bootstrap's grid system.
