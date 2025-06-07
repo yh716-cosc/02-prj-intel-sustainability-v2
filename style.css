@@ -20,14 +20,7 @@ header {
   padding: 2rem 0; /* Use rem for spacing */
 }
 
-/* Center header content using Bootstrap's grid utility classes in your HTML:
-   <div class="container">
-     <div class="row justify-content-center">
-       <div class="col-auto header-content"> ... </div>
-     </div>
-   </div>
-   This will center the header content horizontally.
-*/
+
 
 .header-content {
   display: flex;           /* Place children in a row */
@@ -76,15 +69,6 @@ header p {
    <section class="px-5 py-5 mx-5">
    This adds padding and margin using Bootstrap's grid system.
 */
-  section {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 2em;
-  padding: 0; /* Let Bootstrap's classes handle padding */
-  margin: 0;  /* Let Bootstrap's classes handle margin */
-}
 
 .timeline-card {
   background: #fff;
@@ -162,20 +146,18 @@ footer {
 
 /* Responsive: stack timeline cards vertically on small screens */
 @media (max-width: 700px) {
-  section {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow-x: visible;
-    gap: 2em;
-    padding: 0;
-    margin: 0;
+  .timeline-scroll {
+    display: block;           /* Stack cards vertically */
+    overflow-x: visible;      /* No horizontal scroll */
+    gap: 0;                   /* No horizontal gap needed */
+    padding-bottom: 0;
   }
   .timeline-card {
-    width: 90vw;
-    max-width: 400px;
-    min-width: 0;
-    height: auto;
+    width: 100%;              /* Card fills the container width */
+    max-width: 100%;          /* Remove max width restriction */
+    min-width: 80%;             /* Allow shrinking */
+    height: auto;             /* Let card height grow with content */
+    margin: 1em 0;            /* Space above and below each card */
   }
 }
 
@@ -207,10 +189,7 @@ footer {
   text-align: right;
 }
 
-/* Only reverse the row direction for the timeline cards section in RTL */
-.translated-rtl .timeline-cards-section {
-  flex-direction: row-reverse;
-}
+
 
 /* Make form input boxes align right in RTL mode */
 .translated-rtl input,
@@ -239,7 +218,7 @@ footer {
 /* RTL support: reverse the scroll direction and card order */
 .translated-rtl .timeline-scroll {
   flex-direction: row-reverse;  /* Cards go right-to-left */
-  direction: rtl;               /* Scrollbar and scroll direction are RTL */
+
 }
 
 
