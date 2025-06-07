@@ -1,0 +1,178 @@
+/* Add your CSS here */
+
+
+/* Add a blue background to the header section */
+
+body {
+  margin: 0; /* Remove default margin from the body */
+  font-family: 'Roboto', Arial, sans-serif; /* Use a clean, readable font */
+  background-color: #efefef;
+  /*background-image: radial-gradient(circle, rgba(115, 141, 170, 0.315) 3px, transparent 2px);
+  background-size: 40px 40px;
+  background-repeat: repeat;*/
+}
+
+header {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  background: -webkit-linear-gradient(top, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  background: linear-gradient(to bottom, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  padding: 2rem 0; /* Use rem for spacing */
+}
+
+/* Center header content using Bootstrap's grid utility classes in your HTML:
+   <div class="container">
+     <div class="row justify-content-center">
+       <div class="col-auto header-content"> ... </div>
+     </div>
+   </div>
+   This will center the header content horizontally.
+*/
+
+.header-content {
+  display: flex;           /* Place children in a row */
+  align-items: center;     /* Vertically center items */
+  gap: 2em;                /* Space between logo and text */
+  padding: 1em;
+  justify-content: center; /* Center the whole group horizontally */
+}
+
+.header-text {
+  max-width: 30em;
+}
+
+header h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #c7daea;
+  font-size: 1.1rem;
+}
+
+/* Use Bootstrap's spacing utilities for section padding in your HTML:
+   <section class="px-5 py-5 mx-5">
+   This adds padding and margin using Bootstrap's grid system.
+*/
+section {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 2em;
+  padding: 0; /* Let Bootstrap's classes handle padding */
+  margin: 0;  /* Let Bootstrap's classes handle margin */
+}
+
+.timeline-card {
+  background: #fff;
+  border: 2px solid #2378b1;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 330px;
+  max-width: 370px;
+  width: 350px;
+  height: 350px;
+  box-shadow: 0 2px 8px rgba(88, 76, 106, 0.08);
+  box-sizing: border-box;
+  position: relative;
+  scroll-snap-align: start;
+  margin: 1rem; /* Add margin between cards for spacing */
+}
+
+.timeline-card h2 {
+  color: #045492;
+  font-size: 2.5em;
+  margin: 0.2em 0 0 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.timeline-card p {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 243, 255, 0.95);
+  color: #222;
+  padding: 0.5em;
+  border-radius: 12px;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.timeline-card:hover p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(54, 65, 134, 0.623);
+}
+
+.timeline-card:hover {
+  transform: scale(1.05,1.05);
+  transition: transform 0.3s ease;
+}
+
+.timeline-card img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: #1C6EA4;
+  color: white;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+/* Responsive: stack timeline cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: visible;
+    gap: 2em;
+    padding: 0;
+    margin: 0;
+  }
+  .timeline-card {
+    width: 90vw;
+    max-width: 400px;
+    min-width: 0;
+    height: auto;
+  }
+}
+
+/* RTL support for translated pages */
+.translated-rtl {
+  direction: rtl;
+  text-align: right;
+}
+.translated-rtl .header-content {
+  flex-direction: row-reverse;
+}
+.translated-rtl section {
+  flex-direction: row-reverse;
+}
+.translated-rtl .timeline-card p {
+  text-align: right;
+}
+
+
