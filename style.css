@@ -76,7 +76,7 @@ header p {
    <section class="px-5 py-5 mx-5">
    This adds padding and margin using Bootstrap's grid system.
 */
-section {
+  section {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -179,27 +179,6 @@ footer {
   }
 }
 
-/* Horizontal scroll snap for timeline cards */
-.timeline-scroll {
-  display: flex;                /* Place cards in a row */
-  flex-direction: row;          /* Default: left-to-right */
-  overflow-x: auto;             /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory;/* Enable snap scrolling */
-  gap: 2em;                     /* Space between cards */
-  padding-bottom: 1em;          /* Space for scrollbar */
-}
-
-/* Each card should snap to the start */
-.timeline-card {
-  scroll-snap-align: start;
-}
-
-/* RTL support: reverse the scroll direction and card order */
-body[dir="rtl"] .timeline-scroll,
-.translated-rtl .timeline-scroll {
-  flex-direction: row-reverse;  /* Cards go right-to-left */
-  direction: rtl;               /* Scrollbar and scroll direction are RTL */
-}
 
 /* Optional: make sure text inside cards is still LTR unless you want RTL text */
 .timeline-card {
@@ -216,13 +195,6 @@ body[dir="rtl"] .timeline-scroll,
   unicode-bidi: plaintext;
 }
 
-/* Make the timeline cards section reverse row order in RTL */
-.translated-rtl .container.timeline-cards-section {
-  display: flex;
-  flex-direction: row-reverse; /* Cards will appear in reverse order in RTL */
-  flex-wrap: wrap;
-  gap: 1em; /* Optional: space between cards */
-}
 
 /* Make header content and timeline reverse for RTL */
 .translated-rtl .header-content {
@@ -235,12 +207,39 @@ body[dir="rtl"] .timeline-scroll,
   text-align: right;
 }
 
+/* Only reverse the row direction for the timeline cards section in RTL */
+.translated-rtl .timeline-cards-section {
+  flex-direction: row-reverse;
+}
+
 /* Make form input boxes align right in RTL mode */
 .translated-rtl input,
 .translated-rtl textarea,
 .translated-rtl select {
   direction: rtl;
   text-align: right;
+}
+
+
+/* Horizontal scroll snap for timeline cards */
+.timeline-scroll {
+  display: flex;                /* Place cards in a row */
+  flex-direction: row;          /* Default: left-to-right */
+  overflow-x: auto;             /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory;/* Enable snap scrolling */
+  gap: 2em;                     /* Space between cards */
+  padding-bottom: 1em;          /* Space for scrollbar */
+}
+
+/* Each card should snap to the start */
+.timeline-card {
+  scroll-snap-align: start;
+}
+
+/* RTL support: reverse the scroll direction and card order */
+.translated-rtl .timeline-scroll {
+  flex-direction: row-reverse;  /* Cards go right-to-left */
+  direction: rtl;               /* Scrollbar and scroll direction are RTL */
 }
 
 
