@@ -179,6 +179,36 @@ footer {
   }
 }
 
+/* Horizontal scroll snap for timeline cards */
+.timeline-scroll {
+  display: flex;                /* Place cards in a row */
+  flex-direction: row;          /* Default: left-to-right */
+  overflow-x: auto;             /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory;/* Enable snap scrolling */
+  gap: 2em;                     /* Space between cards */
+  padding-bottom: 1em;          /* Space for scrollbar */
+}
+
+/* Each card should snap to the start */
+.timeline-card {
+  scroll-snap-align: start;
+}
+
+/* RTL support: reverse the scroll direction and card order */
+body[dir="rtl"] .timeline-scroll,
+.translated-rtl .timeline-scroll {
+  flex-direction: row-reverse;  /* Cards go right-to-left */
+  direction: rtl;               /* Scrollbar and scroll direction are RTL */
+}
+
+/* Optional: make sure text inside cards is still LTR unless you want RTL text */
+.timeline-card {
+  direction: ltr;
+}
+.translated-rtl .timeline-card {
+  direction: rtl; /* Only if you want card content to be RTL too */
+}
+
 /* RTL support for translated pages */
 .translated-rtl {
   direction: rtl;
